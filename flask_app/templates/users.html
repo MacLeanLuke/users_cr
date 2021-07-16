@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Massive Users Table</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="static/assets/css/main.css" />
+    <noscript
+      ><link rel="stylesheet" href="static/assets/css/noscript.css"
+    /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <a href="/" class="logo">Massive user table</a>
+      </header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="/">Enter User</a></li>
+          <li class="active"><a href="/users">User Table</a></li>
+        </ul>
+        <ul class="icons">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/luke-maclean/"
+              class="icon brands fa-linkedin-in"
+              ><span class="label">LinkedIn</span></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/MacLeanLuke"
+              class="icon brands fa-github"
+              ><span class="label">GitHub</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Post -->
+        <section class="post">
+          <header class="major">
+            <h1>
+              Massive<br />
+              User Table
+            </h1>
+          </header>
+          <!-- Table -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Full Name</th>
+                  <th>Email</th>
+                  <th>Created At</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for user in users %}
+                <tr>
+                  <td>{{user.id}}</td>
+                  <td>{{user.first_name}} {{user.last_name}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.created_at}}</td>
+                  <td><a href="/users/{{user.id}}/delete">x</a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+              <!-- <tfoot>
+                <tr>
+                  <td colspan="2"></td>
+                  <td>100.00</td>
+                </tr>
+              </tfoot> -->
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer"></footer>
+
+      <!-- Copyright -->
+      <div id="copyright">
+        <ul>
+          <li>&copy; Untitled</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/js/jquery.scrollex.min.js"></script>
+    <script src="static/assets/js/jquery.scrolly.min.js"></script>
+    <script src="static/assets/js/browser.min.js"></script>
+    <script src="static/assets/js/breakpoints.min.js"></script>
+    <script src="static/assets/js/util.js"></script>
+    <script src="static/assets/js/main.js"></script>
+  </body>
+</html>
